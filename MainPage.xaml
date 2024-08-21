@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Module01Activity02"
+             x:Class="Module01Activity02.MainPage"
+             BackgroundColor="{DynamicResource DynamicBackgroundColor}">
+
+    <ContentPage.Resources>
+        
+            <Style x:Key="StaticEntryStyle" TargetType="Entry">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+            <Style x:Key="StaticLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+
+        <Color x:Key="DynamicBackgroundColor">SkyBlue</Color>
+    </ContentPage.Resources>
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label Text="{local:CurrentDateExtension}" 
+               Style="{StaticResource StaticLabelStyle}"/>
+
+            <Label Text="Name" Style="{StaticResource StaticLabelStyle}"/>
+            <Entry x:Name="NameEntry" Style="{StaticResource StaticEntryStyle}" Placeholder="Enter your name"/>
+
+            <Label Text="Email" Style="{StaticResource StaticLabelStyle}"/>
+            <Entry x:Name="EmailEntry" Style="{StaticResource StaticEntryStyle}" Placeholder="Enter your email"/>
+
+            <Label Text="Date of Birth" Style="{StaticResource StaticLabelStyle}"/>
+            <DatePicker x:Name="DobPicker" Format="MMMM dd, yyyy"/>
+
+            <Label Text="Bio" Style="{StaticResource StaticLabelStyle}"/>
+            <Editor x:Name="BioEditor" HeightRequest="100" Style="{StaticResource StaticEntryStyle}"/>
+
+            <Button Text="Save Changes" Clicked="OnSaveChangesClicked"/>
+
+            <Button Text="Change Box Color" Clicked="OnChangedBgColor"/>
+
+            <Label x:Name="ConfirmationMessage" Style="{StaticResource StaticLabelStyle}" 
+               IsVisible="False" Text="Profile updated successfully!"/>
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
