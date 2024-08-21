@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Module01Activity02"
@@ -9,15 +9,15 @@
         
             <Style x:Key="StaticEntryStyle" TargetType="Entry">
                 <Setter Property="FontSize" Value="18"/>
-                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="Margin" Value="10"/>
             </Style>
             <Style x:Key="StaticLabelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="18"/>
-                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="Margin" Value="10"/>
             </Style>
-
+        
         <Color x:Key="DynamicBackgroundColor">SkyBlue</Color>
     </ContentPage.Resources>
     
@@ -43,10 +43,14 @@
 
             <Button Text="Save Changes" Clicked="OnSaveChangesClicked"/>
 
-            <Button Text="Change Box Color" Clicked="OnChangedBgColor"/>
+            <Button Text="Change BG Color to Pink" Clicked="OnChangedBgColor"/> 
+            
+            <Button Text="Change BG Color to Sky Blue" Clicked="OnChangedBgColorSb"/>
 
+            <Frame BackgroundColor="AntiqueWhite">
             <Label x:Name="ConfirmationMessage" Style="{StaticResource StaticLabelStyle}" 
                IsVisible="False" Text="Profile updated successfully!"/>
+            </Frame>
 
 
 
